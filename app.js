@@ -1,5 +1,3 @@
-app.get("/", (req, res) => res.type('html').send(html));
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
@@ -7,6 +5,8 @@ const { Pool } = require("pg");
 
 const app = express();
 const port = process.env.PORT || 3001;
+
+app.get("/", (req, res) => res.type('html').send(html));
 
 // PostgreSQLの設定
 const pool = new Pool({
